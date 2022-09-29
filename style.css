@@ -189,7 +189,7 @@ body{
     transition: all 0.3s;
     outline: none;
     font-weight: bold;
-    z-index: 9999;
+    z-index: 9999 !important;
 }
 .search .searchInput::placeholder{
     font-size: 12px;
