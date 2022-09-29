@@ -1,0 +1,372 @@
+*{
+    padding : 0 ;
+    margin : 0 ;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+ul li{
+    list-style: none;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    overflow-x: hidden !important;
+}
+
+
+:root{
+    font-size: 16px;
+    --lightBlue:rgb(23, 166, 198);
+    --green:rgb(47, 164, 92);
+    --font:'Mukta', sans-serif ;
+    --black:rgba(0, 0, 0, 0.809);
+}
+
+
+/* HEADER */
+.header{
+    width: 100vw;
+    height: 60px;
+    background-color: var(--black);
+}
+
+.navRight{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* NAV */
+.header .nav{
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+}
+
+
+.nav .links{
+    display: flex;
+    align-items: center;
+}
+
+.links * {
+    color: white;
+}
+
+.home{
+    color: var(--lightBlue) !important;
+}
+.links .item{
+    margin:0px 15px ;
+}
+
+.item .link{
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-family: var(--font);
+    font-weight: bold;
+    transition: all 0.2s;
+}
+.item .link:hover{
+    color: var(--lightBlue);
+    transition: all 0.2s;
+}
+
+.dropper{
+    position: relative !important;
+    background-color: transparent;
+    border: none;
+}
+
+.dropper::after{
+    position: absolute;
+    left: 116%;
+    top: 30%;
+    content: "";
+    background-color: transparent;
+    width: 5px;
+    height: 5px;
+    border-width: 0 1px 1px 0 !important;
+    border: solid white;
+    transform: rotate(45deg) ;
+    cursor: pointer;
+}
+
+.dropper:focus > .dropDown {
+    visibility: visible;
+    transform: translateY(0px);
+    transition: all 0.2s;
+}
+
+.dropDown{
+    visibility: hidden;
+    position: absolute;
+    top:20px;
+    min-width: 80px;
+    min-height: 100%;
+    background-color:red;
+    transform: translateY(-10px);
+    transition: all 0s;
+
+}
+
+.dropDown ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(65, 63, 63);
+}
+.dropDown ul li{
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+.dropDown ul li a{
+    font-size: 0.9rem;
+}
+
+.dropDown ul li a:hover{
+    color: var(--lightBlue);
+    transition: all 0.3s;
+}
+
+.nav .nav-title{
+    flex: 0.5;
+    color: gray;
+}
+.nav .booker{
+    color: white;
+}
+
+.nav h1 .dot{
+    color: var(--lightBlue);
+}
+
+/* hamburger btn */
+.hamburger{
+    display: none;
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid var(--lightBlue);
+}
+.hamburger i{
+    color:white;
+
+}
+
+.linksActive{
+    transform: translateX(0) !important;
+    transition: all 0.3;
+}
+
+/* nav search */
+.links .search{
+    width: auto;
+}
+
+.search .searchInput
+{
+    position: absolute;
+    font-size: 1rem;
+    color: black;
+    border: 1px solid  none;
+    width: 80px !important;
+    transition: all 0.3s;
+    outline: none;
+    font-weight: bold;
+    z-index: 9999;
+}
+.search .searchInput::placeholder{
+    font-size: 12px;
+    font-weight: normal;
+}
+.search .searchInput:focus{
+    width: 100px !important;
+    transition: all 0.3s;
+    border-color: var(--lightBlue) !important;
+}
+.search .searchbtn{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    margin-right: 5px;
+    transition: all 0.2s;
+}
+
+.search .searchbtn i{
+    color: white;
+
+}
+.search .searchbtn i:hover{
+    color: var(--lightBlue);
+}
+
+.search .searchbtn i{
+    transition: all 0.2s;
+
+}
+
+.searchActive{
+    transform: translateY(0) !important; 
+    transition: all 0.3s;    
+}
+
+
+
+/* main */
+.main{
+    width: 100%;
+    height: 430px;
+    display: flex;
+    background-color: gray;
+}
+
+.main .right{
+    background-color: white;
+    flex: 1;
+}
+
+.main .right .rightImage{
+    width: 100%;
+    height: 100%;
+}
+
+.main .left{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: white;
+}
+
+.left .item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 70%;
+    height: 60%;
+    margin-left: 120px;
+    position: relative;
+}
+
+.left .item .mainBTN{
+    text-align: center;
+    cursor: pointer;
+    width: 100px;
+    padding: 3px 0px;
+    background-color: var(--lightBlue);
+    border: 1px solid transparent;
+    color: white;
+    border-radius: 10px;
+    font-family: var(--font);
+    transition: all 0.5s;
+    position: relative;
+}
+.mainBTN::after{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--lightBlue);
+    height: 100%;
+    transition: all 0.3s;
+    opacity: 1;
+    z-index: -1;
+}
+.mainBTN:hover::after{
+    transform: scale(1.5);
+    opacity: 0;
+    z-index: 1;
+    transition: all 0.3s;
+}
+
+.mainBTN:hover{
+    color: black !important;
+    transition: all 0.5s;
+}
+
+
+.item h1 {
+    color: gray;
+    font-family: var(--font);
+    line-height: 40px;
+    font-weight: 300;
+    text-transform: capitalize;
+}
+.black{
+    color: black;
+}
+.bold{
+    font-weight: bold;
+}
+
+.item .mainP{
+    font-size: 1.1rem;
+    color: gray;
+    text-transform: capitalize;
+}
+
+
+
+/*footer*/
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 140px;
+    /* background-color: rgb(16, 76, 102); */
+}
+
+.footer .item{
+    width: 300px;
+    height: 90%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    justify-content: space-between;
+    /* background-color: blueviolet; */
+}
+.footer .item i{
+    font-size: 1.5rem;
+    margin: 0 8px;
+    color: var(--lightBlue);
+
+}
+.footer .item .text{
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-start;
+    height: 100%;
+    background-color: transparent;
+
+}
+.text .footerSpan{
+    font-size: 1.3rem;
+    color: rgb(107, 104, 104);
+}
+.text .footerP{
+    margin-top: 10px;
+    font-size: 1rem;
+    color: gray;
+    font-family: var(--font);
+    line-height:20px;
+}
